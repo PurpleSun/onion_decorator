@@ -1,6 +1,6 @@
 # Onion-Decorator
 
-![onion decorator](https://raw.githubusercontent.com/PurpleSun/onion_decorator/master/onion.jpg)
+![onion decorator](https://raw.githubusercontent.com/PurpleSun/onion_decorator/master/onion-decorator.jpg)
 
 A common decorator for python.
 
