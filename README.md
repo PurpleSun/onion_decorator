@@ -2,7 +2,7 @@
 
 ![onion decorator](https://raw.githubusercontent.com/PurpleSun/onion_decorator/master/onion-decorator.jpg)
 
-A common decorator for python.
+A common and useful decorator library for python.
 
 ## Supported decorators
 
