@@ -15,12 +15,11 @@ A common and useful decorator library for python.
 7. synchronized
 8. qps
 9. final, override
-10. deprecated
+10. abstract, deprecated
 11. timeout
 12. asynchronous
 13. countcalls
 14. accepts, returns, raises
-15. abstract, deprecated
 
 
 ## Author
