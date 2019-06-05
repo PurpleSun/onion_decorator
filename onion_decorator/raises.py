@@ -5,9 +5,10 @@
 import logging
 from functools import wraps
 
+from onion_decorator.constant import NONE, MEDIUM, STRONG
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-NONE, MEDIUM, STRONG = 0, 1, 2
 
 
 def raises(exceptions, debug=MEDIUM):
@@ -39,5 +40,6 @@ def raises(exceptions, debug=MEDIUM):
 @raises(ValueError, debug=STRONG)
 def foo():
     raise IndexError()
+
 
 foo()

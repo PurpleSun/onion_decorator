@@ -5,9 +5,10 @@
 import logging
 from functools import wraps
 
+from onion_decorator.constant import NONE, MEDIUM, STRONG
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-NONE, MEDIUM, STRONG = 0, 1, 2
 
 
 def accepts(*types, **kw):
@@ -39,9 +40,9 @@ def accepts(*types, **kw):
     return outer
 
 
-# @accepts(int, int, debug=MEDIUM)
-# def add(x, y):
-#     return x + y
-#
-#
-# print add(2, 40)
+@accepts(int, int, debug=MEDIUM)
+def add(x, y):
+    return x + y
+
+
+print add(2, 40)

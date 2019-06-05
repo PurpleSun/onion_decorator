@@ -6,10 +6,10 @@ import logging
 from functools import wraps
 
 from onion_decorator.accepts import accepts
+from onion_decorator.constant import NONE, MEDIUM, STRONG
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-NONE, MEDIUM, STRONG = 0, 1, 2
 
 
 def returns(*types, **kw):
