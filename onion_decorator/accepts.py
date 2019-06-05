@@ -12,6 +12,22 @@ logger = logging.getLogger(__name__)
 
 
 def accepts(*types, **kw):
+    """
+    Check the parameter types of the function
+
+    @accepts(int, int, debug=MEDIUM)
+    def add(x, y):
+        return x + y
+
+    print add(2, 40)
+
+    :param types: expected parameter type
+    :param kw:
+        debug:
+        1. NONE: check off, for production code
+        2. MEDIUM: check on, only record warning log if checking failed
+        3. STRONG: check on, raise TypeError if checking failed
+    """
     if not kw:
         # default level
         debug = MEDIUM
@@ -31,6 +47,7 @@ def accepts(*types, **kw):
                         msg = "invalid arg for function '%s', arg %s is not type of %s" % (f.__name__, arg, t)
                         if debug == MEDIUM:
                             logger.warning(msg)
+                            return f(*args)
                         elif debug == STRONG:
                             raise TypeError(msg)
                 return f(*args)
@@ -40,9 +57,3 @@ def accepts(*types, **kw):
     return outer
 
 
-@accepts(int, int, debug=MEDIUM)
-def add(x, y):
-    return x + y
-
-
-print add(2, 40)

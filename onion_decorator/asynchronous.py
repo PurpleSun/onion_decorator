@@ -8,6 +8,9 @@ from threading import Thread, RLock
 
 
 class asynchronous(object):
+    """
+    makes function asynchronous
+    """
     def __init__(self, func):
         self.func = func
         self.order = 0
